@@ -1,29 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sample HTML File</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medical Widget Test Page</title>
     <link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
-    <h1 class="row">Welcome to the brand new official Nike website</h1>
-<iframe
-    allow="microphone;"
-    width="350"
-    height="430"
-    src="https://console.dialogflow.com/api-client/demo/embedded/289f4a8d-6c8d-42ed-b41c-1486924438dd">
-</iframe>
-    <p class="row">Here you can buy all you new drip</p>
-    <p class="row">Widget present.</p>
-    <script
-        type="module"
-        src="https://djurklinik.se/my-chat-widget.js"
-        onerror="console.error('Widget failed to load: script error.')"
-    ></script>
-    <my-chat-widget height="640px" theme="blue"></my-chat-widget>
+    <main class="page">
+        <header class="intro">
+            <p class="eyebrow">Medical Test Page</p>
+            <h1>Chat Widget QA</h1>
+            <p class="lede">
+                This is a focused test page for the medical chat widget. The text below
+                mirrors typical clinical notes to validate tone, spacing, and responsiveness.
+            </p>
+        </header>
+
+        <section class="card">
+            <h2>Sample Clinical Note</h2>
+            <p>
+                Chief complaint: 2-day history of sore throat, low-grade fever, and fatigue.
+                Denies shortness of breath or chest pain. Reports mild headache relieved by rest.
+            </p>
+            <p>
+                Vitals: Temp 37.8°C, HR 86 bpm, BP 118/74, SpO2 98% on room air.
+                Exam: Mild pharyngeal erythema, no exudate, lungs clear bilaterally.
+            </p>
+            <p>
+                Assessment: Likely viral pharyngitis. Plan: hydrate, rest, acetaminophen
+                as needed, and follow-up if symptoms persist beyond 5 days.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Widget Under Test</h2>
+            <script
+                type="module"
+                src="https://djurklinik.se/my-chat-widget.js"
+                onerror="console.error('Widget failed to load: script error.')"
+            ></script>
+            <my-chat-widget height="640px" theme="blue"></my-chat-widget>
+        </section>
+    </main>
     <script>
-        window.setTimeout(function () {
+        const widgetScript = document.querySelector('script[src*="my-chat-widget.js"]');
+
+        if (widgetScript) {
+            widgetScript.addEventListener("load", () => {
+                console.info("Widget script loaded.");
+            });
+            widgetScript.addEventListener("error", () => {
+                console.error("Widget script failed to load.");
+            });
+        } else {
+            console.warn("Widget script tag not found.");
+        }
+
+        window.setTimeout(() => {
             if (!window.customElements || !window.customElements.get("my-chat-widget")) {
-                console.error("Widget failed to load: custom element not defined.");
+                console.error("Widget failed to register custom element.");
+            } else {
+                console.info("Widget custom element is registered.");
             }
         }, 3000);
     </script>
