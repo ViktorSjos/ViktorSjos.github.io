@@ -13,6 +13,19 @@
     src="https://console.dialogflow.com/api-client/demo/embedded/289f4a8d-6c8d-42ed-b41c-1486924438dd">
 </iframe>
     <p class="row">Here you can buy all you new drip</p>
-    <p class="row">Please ask our chat bot anything</p>
+    <p class="row">Widget present.</p>
+    <script
+        type="module"
+        src="https://djurklinik.se/my-chat-widget.js"
+        onerror="console.error('Widget failed to load: script error.')"
+    ></script>
+    <my-chat-widget height="640px" theme="blue"></my-chat-widget>
+    <script>
+        window.setTimeout(function () {
+            if (!window.customElements || !window.customElements.get("my-chat-widget")) {
+                console.error("Widget failed to load: custom element not defined.");
+            }
+        }, 3000);
+    </script>
 </body>
 </html>
