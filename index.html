@@ -3,40 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Medical Widget Test Page</title>
+    <title>Chat Widget Preview</title>
     <link rel="stylesheet" type="text/css" href="styling.css">
 </head>
 <body>
     <main class="page">
         <header class="intro">
-            <p class="eyebrow">Medical Test Page</p>
+            <p class="eyebrow">Widget Preview</p>
             <h1>Chat Widget QA</h1>
             <p class="lede">
-                This is a focused test page for the medical chat widget. The text below
-                mirrors typical clinical notes to validate tone, spacing, and responsiveness.
+                A clean, focused layout to present the chat widget and check its spacing,
+                typography, and responsiveness without medical copy distracting from the UI.
             </p>
         </header>
 
         <section class="card">
-            <h2>Sample Clinical Note</h2>
+            <h2>Presentation Notes</h2>
             <p>
-                Chief complaint: 2-day history of sore throat, low-grade fever, and fatigue.
-                Denies shortness of breath or chest pain. Reports mild headache relieved by rest.
+                This page highlights the widget in a simple card layout so you can evaluate
+                how it sits alongside supporting content and visuals.
             </p>
             <p>
-                Vitals: Temp 37.8°C, HR 86 bpm, BP 118/74, SpO2 98% on room air.
-                Exam: Mild pharyngeal erythema, no exudate, lungs clear bilaterally.
-            </p>
-            <p>
-                Assessment: Likely viral pharyngitis. Plan: hydrate, rest, acetaminophen
-                as needed, and follow-up if symptoms persist beyond 5 days.
+                Resize the window to confirm the widget stays centered, the text remains
+                readable, and the side images adapt gracefully on smaller screens.
             </p>
         </section>
 
-        <section class="card">
+        <section class="card widget-card">
             <h2>Widget Under Test</h2>
-            <script type="module" src="https://dev.djurklinik.se/my-chat-widget.js"></script>
-            <my-chat-widget height="640px" theme="blue"></my-chat-widget>
+            <div class="widget-frame">
+                <img class="side-gif" src="assets/E_EBkq8UcAAOswH.jpg" alt="Surprised character">
+                <div class="widget-shell">
+                    <script type="module" src="https://dev.djurklinik.se/my-chat-widget.js"></script>
+                    <my-chat-widget height="640px" theme="blue"></my-chat-widget>
+                </div>
+                <img class="side-gif" src="assets/E_EBkq8UcAAOswH.jpg" alt="Surprised character">
+            </div>
         </section>
     </main>
     <script>

@@ -60,6 +60,29 @@ h1 {
     box-shadow: var(--shadow);
 }
 
+.widget-card h2 {
+    margin-bottom: 18px;
+}
+
+.widget-frame {
+    display: grid;
+    grid-template-columns: minmax(120px, 160px) minmax(0, 1fr) minmax(120px, 160px);
+    gap: 18px;
+    align-items: center;
+}
+
+.widget-shell {
+    min-width: 0;
+}
+
+.side-gif {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    justify-self: center;
+    filter: drop-shadow(0 12px 18px rgba(31, 42, 46, 0.18));
+}
+
 h2 {
     margin: 0 0 12px;
     font-size: 1.35rem;
@@ -86,5 +109,13 @@ my-chat-widget {
 
     .card {
         padding: 18px;
+    }
+
+    .widget-frame {
+        grid-template-columns: 1fr;
+    }
+
+    .side-gif {
+        max-width: 200px;
     }
 }
